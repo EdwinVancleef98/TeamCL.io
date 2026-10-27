@@ -39,7 +39,6 @@ header{padding:calc(22px + env(safe-area-inset-top)) 22px 14px;max-width:720px;m
 .ch .side{color:var(--mut);font-size:14px}
 .ic{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(192,132,252,.18);font-size:19px;flex:none}
 .ic.r{background:rgba(255,122,122,.18)}.ic.g{background:rgba(94,230,160,.16)}.ic.b{background:rgba(147,197,253,.16)}
-/* progress card */
 .dash{display:flex;align-items:center;gap:20px}
 .rings{width:140px;height:140px;flex:none;filter:drop-shadow(0 0 10px rgba(249,168,212,.25))}
 .rings circle{fill:none;stroke-linecap:round;transition:stroke-dashoffset .6s ease}
@@ -50,7 +49,6 @@ header{padding:calc(22px + env(safe-area-inset-top)) 22px 14px;max-width:720px;m
 .trk{height:8px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden}
 .trk i{display:block;height:100%;border-radius:8px;width:0;transition:width .6s ease}
 @media (max-width:380px){.dash{flex-direction:column;align-items:stretch}.rings{margin:0 auto}}
-/* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 16px;border-radius:18px;border:1px solid var(--line);background:var(--glass2);color:var(--tx);font:700 15px "Manrope",sans-serif;cursor:pointer;transition:transform .1s}
 .btn:active{transform:scale(.97)}
 .btn.p{border:0;background:linear-gradient(135deg,#c084fc,#f0abfc);color:#2a1259;box-shadow:0 6px 22px rgba(192,132,252,.45)}
@@ -63,7 +61,6 @@ header{padding:calc(22px + env(safe-area-inset-top)) 22px 14px;max-width:720px;m
 input[type=text]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.2);color:var(--tx);font:500 15px "Manrope",sans-serif}
 input::placeholder{color:var(--dim)}
 input:focus,button:focus-visible,summary:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
-/* checklist */
 .lh{display:flex;justify-content:space-between;align-items:center;margin:6px 4px 12px}
 .lh h3{margin:0;font-size:20px;font-weight:700}
 details.sec{background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:24px;margin-bottom:12px;overflow:hidden;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
@@ -86,7 +83,6 @@ summary .ic{width:38px;height:38px;font-size:17px}
 .ib.on{color:var(--amber)}
 form.add{display:flex;gap:8px;padding:12px 16px;border-top:1px solid rgba(255,255,255,.06)}
 form.add input{flex:1}
-/* photos */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .ph{background:var(--glass);border:1px solid var(--line);border-radius:22px;overflow:hidden}
 .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;cursor:pointer}
@@ -95,11 +91,9 @@ form.add input{flex:1}
 .badge{font-size:10px;font-weight:800;padding:3px 7px;border-radius:8px;letter-spacing:.04em}
 .badge.before{background:rgba(147,197,253,.2);color:var(--blue)}.badge.after{background:rgba(94,230,160,.2);color:var(--green)}
 .empty{text-align:center;padding:30px 10px;color:var(--dim)}
-/* history */
 .hrow{display:flex;align-items:center;gap:14px}
 .hrow .pct{width:52px;height:52px;flex:none}
 .hrow b{font-size:16px}
-/* bottom nav */
 nav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom));width:calc(100% - 28px);max-width:560px;height:72px;
   display:flex;align-items:center;justify-content:space-around;background:rgba(28,18,58,.78);border:1px solid var(--line);border-radius:36px;
   backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 12px 34px rgba(0,0,0,.45);z-index:6}
@@ -114,7 +108,6 @@ nav .gap{width:74px}
 #fab:active{transform:translateX(-50%) scale(.94)}
 #toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);background:rgba(255,255,255,.95);color:#2a1259;font-weight:700;padding:10px 18px;border-radius:20px;font-size:14px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:40;white-space:nowrap}
 #toast.on{opacity:1}
-/* overlays */
 .ov{position:fixed;inset:0;background:var(--bg3);z-index:30;overflow:auto;display:none}
 .ov.on{display:block}
 .rbar{position:sticky;top:0;display:flex;gap:8px;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;background:rgba(27,16,54,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:2}
@@ -139,7 +132,6 @@ nav .gap{width:74px}
 </header>
 
 <main>
-<!-- CHECKLIST -->
 <section class="tab on" id="t-list">
   <div class="card">
     <div class="ch"><div class="ic">🛠️</div><h2>Visit Progress</h2><span class="side" id="dTime">Today</span></div>
@@ -155,7 +147,7 @@ nav .gap{width:74px}
       <div class="mets">
         <div class="met"><div class="l">Checklist<b id="m1">0/0</b></div><div class="trk"><i id="b1" style="background:#f9a8d4"></i></div></div>
         <div class="met"><div class="l">Critical ★<b id="m2">0/0</b></div><div class="trk"><i id="b2" style="background:#5ee6a0"></i></div></div>
-        <div class="met"><div class="l">Kit packed<b id="m3">0/0</b></div><div class="trk"><i id="b3" style="background:#93c5fd"></i></div></div>
+        <div class="met"><div class="l">Finishing Touch<b id="m3">0/0</b></div><div class="trk"><i id="b3" style="background:#93c5fd"></i></div></div>
       </div>
     </div>
   </div>
@@ -166,7 +158,6 @@ nav .gap{width:74px}
   </div>
 </section>
 
-<!-- PHOTOS -->
 <section class="tab" id="t-photos">
   <div class="card">
     <div class="ch"><div class="ic r">📸</div><h2>Work Photos</h2><span class="side" id="phCount">0</span></div>
@@ -182,7 +173,6 @@ nav .gap{width:74px}
   <div class="grid" id="photoGrid"></div>
 </section>
 
-<!-- HISTORY -->
 <section class="tab" id="t-hist">
   <div class="lh"><h3>History</h3></div>
   <div id="histList"></div>
@@ -220,7 +210,6 @@ const store=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}ca
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),2200)}
 function dur(a,b){if(!a)return'';const m=Math.max(0,Math.round(((b||Date.now())-a)/60000));return Math.floor(m/60)+'h '+(m%60)+'m'}
 
-/* ---------- Greeting ---------- */
 function renderGreet(){const d=new Date(),h=d.getHours();
   $('#hDate').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'});
   $('#hGreet').textContent=h<12?'Good morning':h<17?'Good afternoon':'Good evening';}
@@ -228,22 +217,21 @@ function renderGreet(){const d=new Date(),h=d.getHours();
 /* ---------- Default checklist ---------- */
 const mk=(id,title,icon,arr)=>({id,title,icon,items:arr.map(t=>({id:uid(),text:t.replace(/^!/,''),crit:t[0]==='!'}))});
 const DEFAULT=()=>[
- mk('prep','Before Departure','🧭',['!Confirm appointment & on-site contact','Review ticket scope & previous visit notes','Download firmware / installers / licenses needed','!Credentials ready (password vault, VPN, admin accounts)','Spare parts for this job loaded in car','Phone & laptop charged']),
- mk('arrive','On Arrival','📍',['Check in with contact & confirm scope','!Take BEFORE photos (rack, desk, cabling)','Note existing damage / issues before touching anything','!Backup configs before changes (firewall, switch, router)','Check UPS / power status']),
- mk('work','Work & Testing','🛠️',['!Issue resolved & tested with the end user','!Internet & network connectivity verified','Wi-Fi / VLAN / DHCP working as expected','Printers, shared drives, email tested','Devices online in cloud dashboard (Meraki / UniFi / Intune)','!Config saved (write mem) & backup exported','Windows / firmware / AV status checked']),
- mk('sec','Security & Documentation','🔐',['!Temporary accounts / passwords removed','!Logged out of all admin sessions on client PCs','Changed passwords stored in vault','Documentation updated (IPs, diagram, asset list)','Cables & ports labeled']),
- mk('clean','Site Cleanup','🧹',['!Take AFTER photos','Packaging & cable offcuts removed','Cables tidied (velcro / ties)','Rack / cabinet doors closed & locked','Ceiling tiles / floor boxes put back','Equipment powered on & LEDs normal']),
- mk('kit','My Kit – Packed?','🎒',['!Laptop','!Laptop charger','!Console cable (USB / RJ45)','USB-Ethernet adapter','Cable tester','Crimper & RJ45 connectors','Screwdriver set','Spare patch cables','Bootable USB drive','Label maker','Flashlight','Power bank / phone charger','Velcro & cable ties','!Faulty / RMA parts collected','!Client keys / access card returned']),
+ mk('prep','Before Departure','🧭',['!Make sure all tools packed']),
+ mk('arrive','On Arrival','📍',['!Take BEFORE photos (rack, desk, cabling)','Note existing damage / issues before touching anything','!Backup configs before changes (firewall, switch, router)']),
+ mk('finish','Finishing Touch','✨',['!Take AFTER photo','!Job completion & delivery note signed','Laptop','Laptop charger','Console cable','Ethernet cable','Cable tester','Crimper','Screwdriver','Cutter','Zip ties','USB','Label machine']),
  mk('hand','Client Handoff','🤝',['!Explained work done to client','Follow-up items agreed / next visit booked','Client satisfaction confirmed'])
 ];
-const ICB={prep:'',arrive:'r',work:'',sec:'b',clean:'g',kit:'b',hand:'r'};
+const ICB={prep:'',arrive:'r',finish:'g',hand:'b'};
 
-let tpl=load('fc_tpl')||DEFAULT();
+// v4 keys so the new default list replaces any older saved list
+const K_TPL='fc_tpl_v4',K_CUR='fc_cur_v4';
+let tpl=load(K_TPL)||DEFAULT();
 let hist=load('fc_hist')||[];
 const newVisit=()=>({id:uid(),created:Date.now(),visit:{client:''},checkIn:Date.now(),checkOut:null,sections:tpl.map(s=>({id:s.id,title:s.title,icon:s.icon,items:s.items.map(i=>({...i,done:false}))})),photos:[]});
-let cur=load('fc_cur')||newVisit();
+let cur=load(K_CUR)||newVisit();
 let edit=false, openSecs=new Set(['prep']), photoCache={}, camPhase='after', reportVisit=null;
-const save=()=>store('fc_cur',cur), saveTpl=()=>store('fc_tpl',tpl), saveHist=()=>store('fc_hist',hist);
+const save=()=>store(K_CUR,cur), saveTpl=()=>store(K_TPL,tpl), saveHist=()=>store('fc_hist',hist);
 
 /* ---------- IndexedDB for photos ---------- */
 const DB=new Promise((res,rej)=>{const r=indexedDB.open('fieldcheck',1);r.onupgradeneeded=()=>r.result.createObjectStore('photos',{keyPath:'id'});r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
@@ -257,11 +245,11 @@ function stats(v){let t=0,d=0;v.sections.forEach(s=>s.items.forEach(i=>{t++;if(i
 function sub(v,f){let t=0,d=0;v.sections.forEach(s=>s.items.forEach(i=>{if(f(s,i)){t++;if(i.done)d++}}));return{t,d,p:t?d/t:0}}
 function ring(id,r,p){const c=2*Math.PI*r,e=$(id);e.style.strokeDasharray=c;e.style.strokeDashoffset=c*(1-Math.min(1,Math.max(0,p)))}
 function renderHeader(){
-  const s=stats(cur),cr=sub(cur,(s,i)=>i.crit),kt=sub(cur,s=>s.id==='kit');
+  const s=stats(cur),cr=sub(cur,(s,i)=>i.crit),ft=sub(cur,s=>s.id==='finish');
   $('#hPct').textContent=s.pct+'%';
-  $('#m1').textContent=`${s.d}/${s.t}`;$('#m2').textContent=`${cr.d}/${cr.t}`;$('#m3').textContent=`${kt.d}/${kt.t}`;
-  $('#b1').style.width=s.pct+'%';$('#b2').style.width=cr.p*100+'%';$('#b3').style.width=kt.p*100+'%';
-  ring('#r1',62,s.t?s.d/s.t:0);ring('#r2',46,cr.p);ring('#r3',30,kt.p);
+  $('#m1').textContent=`${s.d}/${s.t}`;$('#m2').textContent=`${cr.d}/${cr.t}`;$('#m3').textContent=`${ft.d}/${ft.t}`;
+  $('#b1').style.width=s.pct+'%';$('#b2').style.width=cr.p*100+'%';$('#b3').style.width=ft.p*100+'%';
+  ring('#r1',62,s.t?s.d/s.t:0);ring('#r2',46,cr.p);ring('#r3',30,ft.p);
   $('#dTime').textContent='⏱ '+dur(cur.checkIn);
 }
 
@@ -320,7 +308,7 @@ function compress(file,phase){return new Promise((res,rej)=>{
 async function addPhotos(files,phase){
   let n=0;
   for(const f of files){try{const data=await compress(f,phase),id=uid();await idbPut({id,visit:cur.id,data});photoCache[id]=data;cur.photos.push({id,phase,caption:'',ts:Date.now()});n++}catch(e){toast('Could not read image')}}
-  if(n){if(phase==='after')autoTick('clean','AFTER photos');if(phase==='before')autoTick('arrive','BEFORE photos');save();renderPhotos();renderList();renderHeader();toast(`${n} ${phase} photo${n>1?'s':''} saved`)}
+  if(n){if(phase==='after')autoTick('finish','AFTER photo');if(phase==='before')autoTick('arrive','BEFORE photos');save();renderPhotos();renderList();renderHeader();toast(`${n} ${phase} photo${n>1?'s':''} saved`)}
 }
 function autoTick(sid,needle){const s=cur.sections.find(x=>x.id===sid);if(!s)return;const i=s.items.find(x=>x.text.includes(needle));if(i)i.done=true}
 function renderPhotos(){
@@ -342,10 +330,10 @@ $('#photoGrid').addEventListener('click',async e=>{
 });
 $('#vClose').addEventListener('click',()=>$('#viewer').classList.remove('on'));
 
-/* ---------- Open items ---------- */
+/* ---------- Open items (critical + all Finishing Touch) ---------- */
 function openItems(){
   const issues=[];
-  cur.sections.forEach(s=>s.items.forEach(i=>{if(!i.done&&(i.crit||s.id==='kit'))issues.push(`${s.icon} ${i.text}`)}));
+  cur.sections.forEach(s=>s.items.forEach(i=>{if(!i.done&&(i.crit||s.id==='finish'))issues.push(`${s.icon} ${i.text}`)}));
   if(!cur.photos.some(p=>p.phase==='after'))issues.push('📸 No AFTER photo taken');
   return issues;
 }
@@ -397,7 +385,6 @@ $('#histList').addEventListener('click',async e=>{
   if(d.hd!==undefined){const v=hist[+d.hd];if(!confirm(`Delete visit "${v.visit.client||'Unnamed'}" and its photos?`))return;for(const p of v.photos)await idbDel(p.id);hist.splice(+d.hd,1);saveHist();renderHist()}
 });
 
-/* ---------- Tabs ---------- */
 function switchTab(t){
   $$('nav button[data-tab]').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
   $$('.tab').forEach(s=>s.classList.toggle('on',s.id==='t-'+t));
